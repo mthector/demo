@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block body %}
+<h1>Página de Detalles de la Tarea {{task.id}}</h1>
+
+<p>Name: {{task.name}} </p>
+<p>Description: {{task.description}} </p>
+<p>Due_Date: {{task.due_date}}</p>
+<p>Categoty: {{task.category_id}} - {{task.category.name}}</p>
+
+
+
+
+
+{% endblock %}

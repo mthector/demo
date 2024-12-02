@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block title %}
+Task List
+{% endblock %} 
+
+{% block style %}
+.actions {
+    float: right;
+}
+
+.task {
+    border: 1px solid lightgrey;
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+{% endblock %}
+
+{% block body %}
+<h1>To-Do List</h1>
+{%for task in tasks%}
+<div class="task">
+    {{task.name}}
+    {% if task.due_date %}
+    - {{task.due_date}}
+    {% endif %}
+    <span class="actions">
+        <a href="/task/{{task.id}}/">Details</a>
+        <a href="/task/{{task.id}}/update/">Update</a>
+        <a href="/task/{{task.id}}/delete/">Delete</a>
+    </span>
+</div>
+{%endfor%}
+<a href="/task/create/">Create</a>
+{% endblock %}
